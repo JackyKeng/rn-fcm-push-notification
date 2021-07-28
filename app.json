@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "RN-FCM-PushNotification",
+    "slug": "RN-FCM-PushNotification",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "RN-FCM-PushNotification"
+}
