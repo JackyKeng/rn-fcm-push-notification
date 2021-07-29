@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "586195917947",
+    "project_id": "fir-rn-fcm-15fb4",
+    "storage_bucket": "fir-rn-fcm-15fb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586195917947:android:8e4e1b32bb8011db27d6de",
+        "android_client_info": {
+          "package_name": "com.rnfcmpushnotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586195917947-du71e8rjt6oa7ao5f7kr8akh5aa3s6n6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1Q73DEw7irhYX3BB2Tndsffzy1xtr_Kw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586195917947-du71e8rjt6oa7ao5f7kr8akh5aa3s6n6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "586195917947-f32iqurpkfmcrpte3cqmupkndparkvig.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.name.RNFCMPushNotification"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

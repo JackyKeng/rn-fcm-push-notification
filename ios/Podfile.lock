@@ -48,6 +48,32 @@ PODS:
     - React-Core (= 0.63.4)
     - React-jsi (= 0.63.4)
     - ReactCommon/turbomodule/core (= 0.63.4)
+  - Firebase/CoreOnly (8.4.0):
+    - FirebaseCore (= 8.4.0)
+  - Firebase/Messaging (8.4.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 8.4.0)
+  - FirebaseCore (8.4.0):
+    - FirebaseCoreDiagnostics (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Logger (~> 7.4)
+  - FirebaseCoreDiagnostics (8.4.0):
+    - GoogleDataTransport (~> 9.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Logger (~> 7.4)
+    - nanopb (~> 2.30908.0)
+  - FirebaseInstallations (8.4.0):
+    - FirebaseCore (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/UserDefaults (~> 7.4)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - FirebaseMessaging (8.4.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Reachability (~> 7.4)
+    - GoogleUtilities/UserDefaults (~> 7.4)
   - Folly (2020.01.13.00):
     - boost-for-react-native
     - DoubleConversion
@@ -58,6 +84,33 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - GoogleDataTransport (9.1.0):
+    - GoogleUtilities/Environment (~> 7.2)
+    - nanopb (~> 2.30908.0)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/AppDelegateSwizzler (7.5.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.5.0):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.5.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/Network (7.5.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.5.0)"
+  - GoogleUtilities/Reachability (7.5.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (7.5.0):
+    - GoogleUtilities/Logger
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
+  - PromisesObjC (2.0.0)
   - RCTRequired (0.63.4)
   - RCTTypeSafety (0.63.4):
     - FBLazyVector (= 0.63.4)
@@ -284,6 +337,15 @@ PODS:
     - React-Core (= 0.63.4)
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
+  - RNCPushNotificationIOS (1.8.0):
+    - React-Core
+  - RNFBApp (12.3.0):
+    - Firebase/CoreOnly (= 8.4.0)
+    - React-Core
+  - RNFBMessaging (12.3.0):
+    - Firebase/Messaging (= 8.4.0)
+    - React-Core
+    - RNFBApp
   - RNGestureHandler (1.10.3):
     - React-Core
   - RNReanimated (2.2.0):
@@ -368,6 +430,9 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
+  - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
+  - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -380,6 +445,15 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - Firebase
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseInstallations
+    - FirebaseMessaging
+    - GoogleDataTransport
+    - GoogleUtilities
+    - nanopb
+    - PromisesObjC
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -456,6 +530,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCPushNotificationIOS:
+    :path: "../node_modules/@react-native-community/push-notification-ios"
+  RNFBApp:
+    :path: "../node_modules/@react-native-firebase/app"
+  RNFBMessaging:
+    :path: "../node_modules/@react-native-firebase/messaging"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
@@ -476,22 +556,31 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: cde416483dac037923206447da6e1454df403714
-  EXApplication: 9ff2a206009d6e55bca6c20b3f33d07986b51ef3
-  EXConstants: 3babb61f8f4bb7dffe85b8b7d6eaa31d903e4d7e
-  EXErrorRecovery: 404d827bc7d42f306c062d58a60b06afc4d082b3
-  EXFileSystem: 0a04aba8da751b9ac954065911bcf166503f8267
-  EXFont: 9846ba1bb6f5f5aed44e20eea3ac70693323832d
-  EXImageLoader: d3531a3fe530b22925c19977cb53bb43e3821fe6
-  EXKeepAwake: f4105ef469be7b283f66ce2d7234bb71ac80cd26
-  ExpoModulesCore: 2734852616127a6c1fc23012197890a6f3763dc7
-  EXSplashScreen: 6208ca88470ff5979fd49a08ef3feb01143a2b79
-  EXStructuredHeaders: e52b880264d15b8ad07d36670226c29476af6334
-  EXUpdates: dcc9d0432e1ad0a3f51b8721375401b4708bf7a1
-  EXUpdatesInterface: b68e78b912a03fff7901a5f46ec200c45e3506a5
+  EXApplication: cdc959fd8b706b039621de03585375f11a066a47
+  EXConstants: 5fc49c1bf567558e4576befcccb5e99f49f9c2ce
+  EXErrorRecovery: e092308f1fad9030d298e5116585c2d79671c8e6
+  EXFileSystem: 94496f1160b0bf7f000fe04e38ecb2aa63083a2c
+  EXFont: cb2350960187470ec54ff4668755abb74fde9839
+  EXImageLoader: 6494524ac2b99af4edcacada0e19c71600423e59
+  EXKeepAwake: db7607300383508b9ccf1da5bed4eab541f53e25
+  ExpoModulesCore: 730c7158b2fb179ba5921230e56a083a2304974d
+  EXSplashScreen: f9928db64cf96e1e69beebbc3610cc3b2db2d38f
+  EXStructuredHeaders: 5c1dfd030edc0128927fe3cb7ec73bec84b73ab4
+  EXUpdates: 5455f897b97ac57de640ca5c712372308c438552
+  EXUpdatesInterface: e4c4c7b7c49250314ad7137ffca09446c5b2c492
   FBLazyVector: 3bb422f41b18121b71783a905c10e58606f7dc3e
   FBReactNativeSpec: f2c97f2529dd79c083355182cc158c9f98f4bd6e
+  Firebase: 54cdc8bc9c9b3de54f43dab86e62f5a76b47034f
+  FirebaseCore: 31f389c37ac1ea52454a53d3081f2d7019485a4a
+  FirebaseCoreDiagnostics: cad03be1904b975f845e632f2720c3337da27faf
+  FirebaseInstallations: 1585729afc787877763208c2088ed84221161f77
+  FirebaseMessaging: 78025c56654f05c7ebd6f7f87f9d4b12c5231207
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
+  GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
+  GoogleUtilities: eea970f4a389963963bffe8d8fabe43540678b9c
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
   React: b0a957a2c44da4113b0c4c9853d8387f8e64e615
@@ -512,13 +601,16 @@ SPEC CHECKSUMS:
   React-RCTText: 5c51df3f08cb9dedc6e790161195d12bac06101c
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
+  RNCPushNotificationIOS: 5b1cf9ad2aaa107ecb92d5d2d7005ba521b2b97a
+  RNFBApp: 64c90ab78b6010ed5c3ade026dfe5ff6442c21fd
+  RNFBMessaging: 35a027803f202ecaf911e66a940ca0c5690cb6a0
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNReanimated: d9da990fc90123f4ffbfdda93d00fc15174863a8
   RNScreens: 21b73c94c9117e1110a79ee0ee80c93ccefed8ce
-  UMAppLoader: 21af63390e55c82e037fb9752d93114a80ecf16e
-  UMCore: 2f671796d7439604a1cf8ac7bbe5809cd5c50437
-  UMReactNativeAdapter: f808906d586a16cebdc3844d86e1bdb8f114a873
-  UMTaskManagerInterface: 2be431101b73604e64fbfffcf759336f9d8fccbb
+  UMAppLoader: db2dae4bc3085e21f56d6d9cf7783d08c5999af4
+  UMCore: 063edcab3a9de0c44301fe77af147aa1a654b40f
+  UMReactNativeAdapter: 548b3f6ae0e814ce55c8b2059ac1dc4bf43ec2db
+  UMTaskManagerInterface: 75462b0d8580ec91ae23f88a4f9271a3130efb02
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
 PODFILE CHECKSUM: 7e7e66d724ee24ab41fe8dc28c7d36c73d8cab28
